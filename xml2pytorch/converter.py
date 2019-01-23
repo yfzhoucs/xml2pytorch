@@ -7,27 +7,23 @@ import xml.dom.minidom
 import numpy as np
 
 def main():
+    simple_cnn = convertXML("./xml_examples/simpleCNN.xml")
+    print(simple_cnn)    
+    x = torch.randn(1, 3, 32, 32)
+    y = simple_cnn(x)
+    print(y)
+
+
+def convertXML(xml_filename):
     # 使用minidom解析器打开 XML 文档
-    DOMTree = xml.dom.minidom.parse("./xml_examples/simpleCNN.xml")
+    DOMTree = xml.dom.minidom.parse(xml_filename)
     graph = DOMTree.documentElement
      
     nets = graph.getElementsByTagName("net")
-    net_models = []
-    for net in nets:
-        # print ("*****net*****")
-        # print(net)
-        net_model = Net(net)
-        net_models.append(net_model)
-        print(net_model)
-        x = torch.randn(1, 3, 32, 32)
-        y = net_model(x)
-        print(y)
+    net = nets[0]
+    net_model = Net(net)
 
-
-        # net_model2 = Net2()
-        # y2 = net_model2(x)
-        # print(y2)
-
+    return net_model
 
 
 class Net(nn.Module):
