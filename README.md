@@ -2,11 +2,12 @@
 Using xml to define pytorch neural networks
 ## What can it Do
 With xml2pytorch, you can easily define neural networks in xml, and then declare them in pytorch.
-## Environment
-OS independent. Python3. (Not tested on Python2, but it should work.)
 ## Installation
+### Environment
+OS independent. Python3. (Not tested on Python2, but it should work.)
+### Installing by pip3
 pip3 install xml2pytorch
-## Install Requirements
+### Install Requirements
 torch>=0.4.1
 numpy>=1.15.1
 ## Quick Start
