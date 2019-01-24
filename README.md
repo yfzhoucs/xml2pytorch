@@ -5,13 +5,13 @@ With xml2pytorch, you can easily define neural networks in xml, and then declare
 ## Installation
 ### Environment
 OS independent. Python3. (Not tested on Python2, but it should work.)
-### Install Requirements
+### Install requirements
 torch>=0.4.1
 numpy>=1.15.1
 ### Installing by pip3
 pip3 install xml2pytorch
 ## Quick Start
-### how to declare the CNN defined by a xml file
+### How to declare the CNN defined by a xml file
 ```
 import torch
 import xml2pytorch as xm
@@ -24,7 +24,7 @@ x = torch.randn(1, 3, 32, 32)
 y = net(x)
 print(y)
 ```
-### how to define a simple CNN in xml
+### How to define a simple CNN in xml
 ```
 <graph>
 	<net>
